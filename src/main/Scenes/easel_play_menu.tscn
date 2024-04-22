@@ -1,0 +1,265 @@
+[gd_scene load_steps=13 format=3 uid="uid://tk8b7lbhdwuu"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/easel_play_menu.gd" id="1_0wy0f"]
+[ext_resource type="Texture2D" uid="uid://doup2a1meiqli" path="res://src/main/resources/assets/2d/easel.png" id="1_a7rg4"]
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="3_2r0e5"]
+[ext_resource type="FontFile" uid="uid://inqgifithlsy" path="res://src/main/resources/assets/Fonts/SupplyCenter-0W9nz.ttf" id="4_cae21"]
+[ext_resource type="Texture2D" uid="uid://bafphreo3japh" path="res://src/main/resources/assets/2d/star.png" id="5_o3qlx"]
+[ext_resource type="Script" path="res://src/main/Scripts/scale_font_for_number.gd" id="6_j2qgc"]
+[ext_resource type="PackedScene" uid="uid://bihhwlhrkqfxd" path="res://src/main/Scenes/indent_for_ui_hud.tscn" id="7_uv7w7"]
+[ext_resource type="PackedScene" uid="uid://hj1owafrrlvc" path="res://src/main/Scenes/close_button.tscn" id="8_rk64m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbwpj"]
+bg_color = Color(0.439216, 0.756863, 0.113725, 1)
+border_width_left = 18
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color(0.144878, 0.269452, 0.025342, 1)
+border_blend = true
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xh7a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2k7r"]
+font = ExtResource("4_cae21")
+font_size = 65
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3.47, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rognm"]
+font = ExtResource("4_cae21")
+font_size = 66
+outline_size = 10
+outline_color = Color(0.247059, 0.0823529, 0.0666667, 1)
+
+[node name="easel_play_menu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.227451)
+script = ExtResource("1_0wy0f")
+
+[node name="bot_alignment_container" type="AspectRatioContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.7115
+alignment_vertical = 2
+
+[node name="easel_texture" type="TextureRect" parent="bot_alignment_container"]
+layout_mode = 2
+texture = ExtResource("1_a7rg4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="art_on_easel" type="HBoxContainer" parent="bot_alignment_container/easel_texture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left_push" type="Control" parent="bot_alignment_container/easel_texture/art_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bot_alignment_container/easel_texture/art_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.45
+
+[node name="top_push" type="Control" parent="bot_alignment_container/easel_texture/art_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.01
+
+[node name="art" type="TextureRect" parent="bot_alignment_container/easel_texture/art_on_easel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.23
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bot_push" type="Control" parent="bot_alignment_container/easel_texture/art_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.38
+
+[node name="right_push" type="Control" parent="bot_alignment_container/easel_texture/art_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="play_but_on_easel" type="HBoxContainer" parent="bot_alignment_container/easel_texture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left_push" type="Control" parent="bot_alignment_container/easel_texture/play_but_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.03
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bot_alignment_container/easel_texture/play_but_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.16
+
+[node name="top_push" type="Control" parent="bot_alignment_container/easel_texture/play_but_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.26
+
+[node name="Play_but" type="Control" parent="bot_alignment_container/easel_texture/play_but_on_easel/VBoxContainer" node_paths=PackedStringArray("child_button")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+script = ExtResource("3_2r0e5")
+child_button = NodePath("Play_button")
+
+[node name="Play_button" type="Button" parent="bot_alignment_container/easel_texture/play_but_on_easel/VBoxContainer/Play_but"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_mbwpj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mbwpj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mbwpj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mbwpj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xh7a")
+
+[node name="Label" type="Label" parent="bot_alignment_container/easel_texture/play_but_on_easel/VBoxContainer/Play_but/Play_button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_o2k7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bot_push" type="Control" parent="bot_alignment_container/easel_texture/play_but_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="right_push" type="Control" parent="bot_alignment_container/easel_texture/play_but_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="star_with_lvl_on_easel" type="HBoxContainer" parent="bot_alignment_container/easel_texture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="left_push" type="Control" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.96
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="top_push" type="Control" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.49
+mouse_filter = 2
+
+[node name="star" type="Control" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.23
+script = ExtResource("3_2r0e5")
+
+[node name="lvl_star" type="TextureRect" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel/VBoxContainer/star"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.23
+texture = ExtResource("5_o3qlx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lvl_number" type="Label" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel/VBoxContainer/star/lvl_star"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.605
+offset_bottom = 7.605
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_rognm")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_j2qgc")
+font_size_one_char = 66
+font_size_two_char = 53
+font_size_three_char = 38
+
+[node name="bot_push" type="Control" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.18
+mouse_filter = 2
+
+[node name="right_push" type="Control" parent="bot_alignment_container/easel_texture/star_with_lvl_on_easel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.85
+mouse_filter = 2
+
+[node name="Indent_for_ui_hud" parent="." instance=ExtResource("7_uv7w7")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="close_button" parent="Indent_for_ui_hud/Indents_for_ui_vert/Indents_for_ui_horiz/UI_Elements" index="0" instance=ExtResource("8_rk64m")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[editable path="Indent_for_ui_hud"]

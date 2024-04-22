@@ -1,0 +1,235 @@
+[gd_scene load_steps=15 format=3 uid="uid://ca6f01chk3osd"]
+
+[ext_resource type="PackedScene" uid="uid://g22yxwdswh4h" path="res://src/main/resources/assets/3d/models/wall_brick.glb" id="1_psldw"]
+[ext_resource type="Material" uid="uid://boaumw2ls38xq" path="res://src/main/resources/assets/3d/materials/wall_material.tres" id="2_v56tr"]
+[ext_resource type="PackedScene" uid="uid://cjsaubs3o0ykg" path="res://src/main/resources/assets/3d/models/ground.glb" id="3_uo5j5"]
+[ext_resource type="Material" uid="uid://c572tairpm51w" path="res://src/main/resources/assets/3d/materials/asphalt_material.tres" id="4_a0psu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl5fk"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qklkr"]
+_surfaces = [{
+"aabb": AABB(-2.78967, -0.0874033, -10.0008, 1.00136e-05, 12.8371, 10),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 3, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rdhwa"]
+resource_name = "wall_brick_Cube_003"
+_surfaces = [{
+"aabb": AABB(-2.78967, -0.0874033, -10.0008, 1.00136e-05, 12.8371, 10),
+"attribute_data": PackedByteArray(0, 128, 101, 230, 52, 151, 255, 255, 0, 128, 255, 255, 255, 255, 255, 255, 255, 255, 254, 255, 254, 255, 32, 51, 255, 255, 101, 230, 52, 151, 32, 51),
+"format": 34896613431,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_dl5fk"),
+"primitive": 3,
+"uv_scale": Vector4(1.92295, 1.24998, 5.51507, 5.00707),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 84, 213, 0, 0, 255, 255, 254, 255, 84, 213, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qklkr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frokl"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_22ibt"]
+_surfaces = [{
+"aabb": AABB(-3.41446, 0, -10, 13.1942, 1e-05, 10),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 3, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dyrw6"]
+resource_name = "ground_Plane"
+_surfaces = [{
+"aabb": AABB(-3.41446, 0, -10, 13.1942, 1e-05, 10),
+"attribute_data": PackedByteArray(213, 123, 255, 223, 255, 255, 255, 127, 213, 123, 255, 255, 101, 230, 255, 127, 255, 255, 254, 255, 101, 230, 255, 255, 254, 255, 255, 223, 255, 255, 255, 255),
+"format": 34896613431,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_frokl"),
+"primitive": 3,
+"uv_scale": Vector4(5.01264, 1, 1.25, 2),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_22ibt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tcwd"]
+size = Vector3(1, 12.425, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pr6im"]
+size = Vector3(1, 23.129, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a446h"]
+size = Vector3(14, 1, 85)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxlsf"]
+size = Vector3(1, 5.147, 80)
+
+[node name="street_with_wall" type="Node3D"]
+
+[node name="street_wall" type="Node3D" parent="."]
+
+[node name="wall_brick" parent="street_wall" instance=ExtResource("1_psldw")]
+
+[node name="wall" parent="street_wall/wall_brick" index="0"]
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick2" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="wall" parent="street_wall/wall_brick2" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick3" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="wall" parent="street_wall/wall_brick3" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick4" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="wall" parent="street_wall/wall_brick4" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick5" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="wall" parent="street_wall/wall_brick5" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick6" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="wall" parent="street_wall/wall_brick6" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick7" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="wall" parent="street_wall/wall_brick7" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="wall_brick8" parent="street_wall" instance=ExtResource("1_psldw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="wall" parent="street_wall/wall_brick8" index="0"]
+mesh = SubResource("ArrayMesh_rdhwa")
+surface_material_override/0 = ExtResource("2_v56tr")
+
+[node name="street_ground" type="Node3D" parent="."]
+
+[node name="ground" parent="street_ground" instance=ExtResource("3_uo5j5")]
+
+[node name="asphalt" parent="street_ground/ground" index="0"]
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground2" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="asphalt" parent="street_ground/ground2" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground3" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="asphalt" parent="street_ground/ground3" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground4" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="asphalt" parent="street_ground/ground4" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground5" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="asphalt" parent="street_ground/ground5" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground6" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="asphalt" parent="street_ground/ground6" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground7" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="asphalt" parent="street_ground/ground7" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="ground8" parent="street_ground" instance=ExtResource("3_uo5j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="asphalt" parent="street_ground/ground8" index="0"]
+mesh = SubResource("ArrayMesh_dyrw6")
+surface_material_override/0 = ExtResource("4_a0psu")
+
+[node name="move_collisions" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="move_collisions"]
+transform = Transform3D(0.999994, 0, 0, 0, 0.999994, 0, 0, 0, 1, -3.28748, 6.18988, 0)
+shape = SubResource("BoxShape3D_4tcwd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="move_collisions"]
+transform = Transform3D(0.866025, -0.500001, 0, 0.500001, 0.866025, 0, 0, 0, 1, 2.53437, -10.217, 0)
+shape = SubResource("BoxShape3D_pr6im")
+
+[node name="Characters_collision" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters_collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27271, -0.5, 0)
+shape = SubResource("BoxShape3D_a446h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Characters_collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28734, 1.57343, 0)
+shape = SubResource("BoxShape3D_wxlsf")
+
+[editable path="street_wall/wall_brick"]
+[editable path="street_wall/wall_brick2"]
+[editable path="street_wall/wall_brick3"]
+[editable path="street_wall/wall_brick4"]
+[editable path="street_wall/wall_brick5"]
+[editable path="street_wall/wall_brick6"]
+[editable path="street_wall/wall_brick7"]
+[editable path="street_wall/wall_brick8"]
+[editable path="street_ground/ground"]
+[editable path="street_ground/ground2"]
+[editable path="street_ground/ground3"]
+[editable path="street_ground/ground4"]
+[editable path="street_ground/ground5"]
+[editable path="street_ground/ground6"]
+[editable path="street_ground/ground7"]
+[editable path="street_ground/ground8"]

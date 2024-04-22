@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bew3ycfpmmro"
+path="res://.godot/imported/five.png-5bee68d06c946e3736309cb1f5cf00fc.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/five.png"
+dest_files=["res://.godot/imported/five.png-5bee68d06c946e3736309cb1f5cf00fc.image"]
+
+[params]
+

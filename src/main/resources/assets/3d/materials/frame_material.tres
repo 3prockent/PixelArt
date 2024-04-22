@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://csk45gvoka66t"]
+
+[ext_resource type="Shader" path="res://src/main/Scripts/3D/Shaders/frame_shader.gdshader" id="1_qk4cg"]
+[ext_resource type="Texture2D" uid="uid://blmfu6j7do41a" path="res://src/main/resources/assets/3d/textures/frame_wood_texture.png" id="2_bvpic"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qk4cg")
+shader_parameter/frame_texture = ExtResource("2_bvpic")

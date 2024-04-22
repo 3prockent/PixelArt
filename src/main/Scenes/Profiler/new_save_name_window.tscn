@@ -1,0 +1,133 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1edbch74fkvd"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/Profiler/new_save_name_window.gd" id="1_m6fvu"]
+[ext_resource type="Theme" uid="uid://dydy7bu3h07i7" path="res://src/main/resources/assets/themes/choose_profile_menu.tres" id="2_ajr2b"]
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="3_lc1i7"]
+
+[node name="NewSaveNameWindow" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.494118)
+script = ExtResource("1_m6fvu")
+
+[node name="NewSaveNameWindowContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="NewSaveNameWindowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewSaveNameWindowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.25
+
+[node name="Control2" type="Control" parent="NewSaveNameWindowContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="NewSaveNameWindowContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 14.2
+theme = ExtResource("2_ajr2b")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Label" type="Label" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 46
+text = "Profile menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 30
+
+[node name="TextEdit" type="LineEdit" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 61
+placeholder_text = "Enter name..."
+alignment = 1
+caret_blink = true
+
+[node name="Expander" type="Control" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.89
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.55
+
+[node name="MarginContainer" type="MarginContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SaveButton" type="Button" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 56
+text = "Save"
+script = ExtResource("3_lc1i7")
+
+[node name="MarginContainer2" type="MarginContainer" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CancelButton" type="Button" parent="NewSaveNameWindowContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 56
+text = "Cancel"
+script = ExtResource("3_lc1i7")
+
+[node name="Control" type="Control" parent="NewSaveNameWindowContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="NewSaveNameWindowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2

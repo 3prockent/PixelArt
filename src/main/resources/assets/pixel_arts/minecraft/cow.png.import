@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://du12dgvwpkjnb"
+path="res://.godot/imported/cow.png-dfb1cbd4473fee35fb71abc0270043f1.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/cow.png"
+dest_files=["res://.godot/imported/cow.png-dfb1cbd4473fee35fb71abc0270043f1.image"]
+
+[params]
+

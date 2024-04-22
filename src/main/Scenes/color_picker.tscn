@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://co4bqgwvqa10o"]
+
+[ext_resource type="Texture2D" uid="uid://dvm1k34e5h75s" path="res://src/main/resources/assets/Color_Picker/rect_ALPHA.png" id="1_sfkrn"]
+[ext_resource type="Script" path="res://src/main/Scripts/color_picker.gd" id="1_wpo3g"]
+[ext_resource type="Shader" path="res://src/main/Scripts/Shaders/color_picker.gdshader" id="2_61x7v"]
+[ext_resource type="Texture2D" uid="uid://0m8c7nibmju0" path="res://src/main/resources/assets/Color_Picker/rect.png" id="3_m4i3k"]
+[ext_resource type="Script" path="res://src/main/Scripts/scale_font_for_number.gd" id="5_h82s0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dgsu"]
+resource_local_to_scene = true
+shader = ExtResource("2_61x7v")
+shader_parameter/progress = 1.0
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/amplitude = 0.0
+shader_parameter/selected = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_exrm3"]
+font_size = 1152
+shadow_size = 115
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Color_Picker" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sfkrn")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("1_wpo3g")
+
+[node name="Texture_Button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6dgsu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_m4i3k")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Number_Of_Color" type="Label" parent="Texture_Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "1"
+label_settings = SubResource("LabelSettings_exrm3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_h82s0")
+shadow_size = 0.25
+use_multiplies_insted = true
+font_mult_one_char = 0.6
+font_mult_two_char = 0.55
+font_mult_three_char = 0.45

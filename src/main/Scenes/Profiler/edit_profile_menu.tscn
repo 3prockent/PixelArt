@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ku7jiy7wkat"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/edit_profile_menu.gd" id="1_3hnj5"]
+[ext_resource type="Theme" uid="uid://dydy7bu3h07i7" path="res://src/main/resources/assets/themes/choose_profile_menu.tres" id="2_3k3be"]
+[ext_resource type="Texture2D" uid="uid://bakxhdk6vgvn0" path="res://src/main/resources/assets/buttons/close_normal.png" id="3_8xk3t"]
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="4_y1d57"]
+
+[node name="EditProfileMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+script = ExtResource("1_3hnj5")
+
+[node name="EditMenuContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="EditMenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditMenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.9
+
+[node name="Control2" type="Control" parent="EditMenuContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="EditMenuContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.3
+theme = ExtResource("2_3k3be")
+
+[node name="MarginContainer2" type="MarginContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.25
+
+[node name="Control" type="HBoxContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Control2" type="Control" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.95
+theme_override_font_sizes/font_size = 46
+text = "Profile menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="TextureButton" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/Control/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_8xk3t")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_y1d57")
+
+[node name="MarginContainer" type="MarginContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 30
+
+[node name="TextEdit" type="LineEdit" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 61
+placeholder_text = "Enter new name..."
+alignment = 1
+caret_blink = true
+
+[node name="Expander" type="Control" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.74
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="MarginContainer" type="MarginContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SaveButton" type="Button" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 56
+text = "Save"
+script = ExtResource("4_y1d57")
+
+[node name="MarginContainer2" type="MarginContainer" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DeleteButton" type="Button" parent="EditMenuContainer/HBoxContainer/PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 56
+text = "Delete"
+script = ExtResource("4_y1d57")
+
+[node name="Control" type="Control" parent="EditMenuContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="EditMenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2

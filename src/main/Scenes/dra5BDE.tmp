@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmh6qwlojm4lh"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/drawing.gd" id="1_ub4ww"]
+[ext_resource type="PackedScene" uid="uid://drcdwg80qo2lp" path="res://src/main/Scenes/Top_black_indent.tscn" id="2_6lr3k"]
+[ext_resource type="Shader" path="res://src/main/Scripts/Shaders/grid.gdshader" id="2_40srs"]
+[ext_resource type="Script" path="res://src/main/Scripts/Art_Rect.gd" id="2_cx56g"]
+[ext_resource type="Script" path="res://src/main/Scripts/PaletteContainer.gd" id="2_whp7r"]
+[ext_resource type="Script" path="res://src/main/Scripts/device_picker.gd" id="3_c86fe"]
+[ext_resource type="Texture2D" uid="uid://b4653r17qpt2i" path="res://src/main/resources/assets/menu_pictures/back.png" id="3_j54c5"]
+[ext_resource type="Texture2D" uid="uid://bqn4wlwhdo0s7" path="res://src/main/resources/assets/frames/Bottom_panel.png" id="3_v71y3"]
+[ext_resource type="Script" path="res://src/main/Scripts/Drawing_Camera.gd" id="5_pf516"]
+[ext_resource type="BitMap" uid="uid://3obd2j7t0phb" path="res://src/main/resources/assets/menu_pictures/back_bitmap.png" id="5_pujky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_juawk"]
+shader = ExtResource("2_40srs")
+shader_parameter/number_of_cells = 8.0
+shader_parameter/grid_width = 1.0
+shader_parameter/img_size = 1080.0
+shader_parameter/border_color = null
+shader_parameter/alpha = 1.0
+
+[node name="Drawing_scene" type="Node"]
+script = ExtResource("1_ub4ww")
+
+[node name="BackGround" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background_Color" type="ColorRect" parent="BackGround"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Art" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Art"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Art/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Art_Rect" type="TextureRect" parent="Art/AspectRatioContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_cx56g")
+
+[node name="Art_Rect_Top_Layer" type="TextureRect" parent="Art/AspectRatioContainer/MarginContainer/Art_Rect"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_juawk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="2D Layer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Black_Indent_" parent="2D Layer" instance=ExtResource("2_6lr3k")]
+
+[node name="Full_Screen" type="Control" parent="2D Layer/Black_Indent_/Scene_put_here" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button back" type="TextureButton" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.29
+texture_normal = ExtResource("3_j54c5")
+texture_click_mask = ExtResource("5_pujky")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Panel" type="NinePatchRect" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+mouse_filter = 0
+texture = ExtResource("3_v71y3")
+region_rect = Rect2(0, 0, 6, 15)
+patch_margin_top = 14
+
+[node name="ScrollContainer" type="ScrollContainer" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_whp7r")
+
+[node name="Separations_from_edges" type="MarginContainer" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.17
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 35
+
+[node name="PalletteContainer" type="HBoxContainer" parent="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer/Panel/ScrollContainer/Separations_from_edges"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Device_Picker" type="Node" parent="."]
+script = ExtResource("3_c86fe")
+Device = "Tablet"
+System = "Android"
+Model = "Lenovo Tab P11 Plus"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+editor_draw_limits = true
+script = ExtResource("5_pf516")
+
+[connection signal="pressed" from="2D Layer/Black_Indent_/Scene_put_here/Full_Screen/VBoxContainer/Button back" to="." method="_on_button_pressed"]
+
+[editable path="2D Layer/Black_Indent_"]

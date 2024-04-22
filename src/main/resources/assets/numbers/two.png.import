@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cuugdmyn3hb26"
+path="res://.godot/imported/two.png-ee77acdb60fb84dcf275ce23c24e7997.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/two.png"
+dest_files=["res://.godot/imported/two.png-ee77acdb60fb84dcf275ce23c24e7997.image"]
+
+[params]
+

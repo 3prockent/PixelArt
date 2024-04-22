@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cnqtr7hjhifn"
+path="res://.godot/imported/zero.png-a2047edc29806861dc7a0e43ffd109fb.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/zero.png"
+dest_files=["res://.godot/imported/zero.png-a2047edc29806861dc7a0e43ffd109fb.image"]
+
+[params]
+

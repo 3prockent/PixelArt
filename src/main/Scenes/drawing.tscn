@@ -1,0 +1,270 @@
+[gd_scene load_steps=20 format=3 uid="uid://cmh6qwlojm4lh"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/drawing.gd" id="1_ub4ww"]
+[ext_resource type="Shader" path="res://src/main/Scripts/Shaders/grid.gdshader" id="2_40srs"]
+[ext_resource type="Shader" path="res://src/main/Scripts/Shaders/Image_Art.gdshader" id="2_cskn4"]
+[ext_resource type="Script" path="res://src/main/Scripts/Art_Rect.gd" id="2_cx56g"]
+[ext_resource type="Texture2D" uid="uid://cy5qwbkuh5j06" path="res://src/main/resources/assets/3d/textures/brick_texture.png" id="2_kjypi"]
+[ext_resource type="Shader" path="res://src/main/Scripts/Shaders/brick_drawing.gdshader" id="2_qqcbx"]
+[ext_resource type="Script" path="res://src/main/Scripts/PaletteContainer.gd" id="2_whp7r"]
+[ext_resource type="Script" path="res://src/main/Scripts/debug_tools.gd" id="3_c86fe"]
+[ext_resource type="Texture2D" uid="uid://bqn4wlwhdo0s7" path="res://src/main/resources/assets/frames/Bottom_panel.png" id="3_v71y3"]
+[ext_resource type="Script" path="res://src/main/Scripts/Drawing_Camera.gd" id="5_pf516"]
+[ext_resource type="PackedScene" uid="uid://bihhwlhrkqfxd" path="res://src/main/Scenes/indent_for_ui_hud.tscn" id="5_yjvtq"]
+[ext_resource type="Script" path="res://src/main/Scripts/Drawing_Input_handler_2d.gd" id="6_uw78f"]
+[ext_resource type="Texture2D" uid="uid://doup2a1meiqli" path="res://src/main/resources/assets/2d/easel.png" id="7_ltiur"]
+[ext_resource type="PackedScene" uid="uid://hj1owafrrlvc" path="res://src/main/Scenes/close_button.tscn" id="12_ulxjf"]
+[ext_resource type="Script" path="res://src/main/Scripts/ui_hud_drawing.gd" id="12_wn5hc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khfub"]
+shader = ExtResource("2_qqcbx")
+shader_parameter/tile_count = Vector2(5, 5)
+shader_parameter/viewport_size = Vector2(2000, 2000)
+shader_parameter/camera_position = Vector2(0, 0)
+shader_parameter/zoom = 1.0
+shader_parameter/art_texture = ExtResource("2_kjypi")
+
+[sub_resource type="GDScript" id="GDScript_5vell"]
+script/source = "extends ColorRect
+
+
+
+func _process(delta: float) -> void:
+	get_material().set_shader_parameter(\"camera_position\",%Camera2D.global_position)
+	get_material().set_shader_parameter(\"zoom\",%Camera2D.zoom.x)
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5rbj"]
+shader = ExtResource("2_cskn4")
+shader_parameter/displayed_selected_color = Color(0.671, 0.671, 0.671, 1)
+shader_parameter/displayed_not_selected_color = Color(1, 1, 1, 1)
+shader_parameter/hint_color_drawing_process = Color(0, 1, 0, 1)
+shader_parameter/current_selected_color = null
+shader_parameter/ratio_to_zoomed_color = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_juawk"]
+shader = ExtResource("2_40srs")
+shader_parameter/number_of_cells = 8.0
+shader_parameter/grid_width = 1.0
+shader_parameter/img_size = 1080.0
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/alpha = 1.0
+
+[node name="Drawing_scene" type="Node"]
+script = ExtResource("1_ub4ww")
+
+[node name="BackGround" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Brick_BackGround" type="ColorRect" parent="BackGround"]
+material = SubResource("ShaderMaterial_khfub")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_5vell")
+
+[node name="Art" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Art"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Art/MarginContainer"]
+layout_mode = 2
+ratio = 0.6625
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Art/MarginContainer/AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("7_ltiur")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left_indent" type="Control" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.93
+
+[node name="top_indent" type="Control" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.29
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Art_Rect" type="TextureRect" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer/VBoxContainer/AspectRatioContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_c5rbj")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.51
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_cx56g")
+
+[node name="Art_Rect_Top_Layer" type="TextureRect" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer/VBoxContainer/AspectRatioContainer/Art_Rect"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_juawk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bot_indent" type="Control" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.14
+
+[node name="right_indent" type="Control" parent="Art/MarginContainer/AspectRatioContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.83
+
+[node name="2D Layer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Full_Screen" type="Control" parent="2D Layer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Input_handler" type="Control" parent="2D Layer/Full_Screen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("6_uw78f")
+
+[node name="container_pallete_push" type="VBoxContainer" parent="2D Layer/Full_Screen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="push_pallete_panel" type="Control" parent="2D Layer/Full_Screen/container_pallete_push"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Pallete_Panel" type="NinePatchRect" parent="2D Layer/Full_Screen/container_pallete_push"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+mouse_filter = 0
+texture = ExtResource("3_v71y3")
+region_rect = Rect2(0, 0, 6, 15)
+patch_margin_top = 14
+script = ExtResource("2_whp7r")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="2D Layer/Full_Screen/container_pallete_push/Pallete_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="Separations_from_edges" type="MarginContainer" parent="2D Layer/Full_Screen/container_pallete_push/Pallete_Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.17
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_bottom = 30
+
+[node name="PalletteContainer" type="HBoxContainer" parent="2D Layer/Full_Screen/container_pallete_push/Pallete_Panel/ScrollContainer/Separations_from_edges"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Indent_for_ui_hud" parent="2D Layer" instance=ExtResource("5_yjvtq")]
+script = ExtResource("12_wn5hc")
+
+[node name="close_button" parent="2D Layer/Indent_for_ui_hud/Indents_for_ui_vert/Indents_for_ui_horiz/UI_Elements" index="0" instance=ExtResource("12_ulxjf")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_horizontal = 1
+
+[node name="Device_Picker" type="Node" parent="."]
+script = ExtResource("3_c86fe")
+Device = "Smartphone"
+System = "Android"
+Model = "Pixel 7 Pro"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+zoom = Vector2(1.735, 1.735)
+editor_draw_limits = true
+script = ExtResource("5_pf516")
+
+[node name="Timer_to_draw" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[editable path="2D Layer/Indent_for_ui_hud"]

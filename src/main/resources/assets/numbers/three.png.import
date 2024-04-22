@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c03cxkhmnjyqp"
+path="res://.godot/imported/three.png-fd75b02e074bba37fdd1c0ee1a48e7f2.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/three.png"
+dest_files=["res://.godot/imported/three.png-fd75b02e074bba37fdd1c0ee1a48e7f2.image"]
+
+[params]
+

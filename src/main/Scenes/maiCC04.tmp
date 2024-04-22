@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm3p6iat1o35"]
+
+[ext_resource type="PackedScene" uid="uid://ca6f01chk3osd" path="res://src/main/3d_scenes/street_with_wall.tscn" id="1_n1rl1"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/3d_menu_camera.gd" id="2_pv1v5"]
+[ext_resource type="Script" path="res://src/main/Scripts/debug_tools.gd" id="3_fpyou"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/Input_handler_3d.gd" id="3_yfb0g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3vrah"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mkrvu"]
+sky_material = SubResource("ProceduralSkyMaterial_3vrah")
+
+[sub_resource type="Environment" id="Environment_4emms"]
+background_mode = 2
+sky = SubResource("Sky_mkrvu")
+tonemap_mode = 2
+
+[node name="Main_Menu" type="Node"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="3D" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="3D"]
+
+[node name="street_with_wall" parent="3D/Objects" instance=ExtResource("1_n1rl1")]
+
+[node name="Light" type="Node" parent="3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D/Light"]
+environment = SubResource("Environment_4emms")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3D/Light"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="Camera_limits" type="Node" parent="3D"]
+
+[node name="Marker_pivot" type="Marker3D" parent="3D/Camera_limits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, 0)
+
+[node name="left_camera_ray_limit" type="RayCast3D" parent="3D/Camera_limits/Marker_pivot"]
+unique_name_in_owner = true
+debug_shape_custom_color = Color(0.423529, 0.462745, 0.988235, 1)
+
+[node name="right_camera_ray_limit" type="RayCast3D" parent="3D/Camera_limits/Marker_pivot"]
+unique_name_in_owner = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Root_UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="3D_Viewport" type="SubViewportContainer" parent="UI/Root_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/Root_UI/3D_Viewport"]
+handle_input_locally = false
+size = Vector2i(1080, 1920)
+render_target_update_mode = 4
+
+[node name="camera_marker" type="Marker3D" parent="UI/Root_UI/3D_Viewport/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, 0)
+script = ExtResource("2_pv1v5")
+
+[node name="Main_3d_camera" type="Camera3D" parent="UI/Root_UI/3D_Viewport/SubViewport/camera_marker"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 2.18557e-08, -3.78552e-08, 0, 0, 0)
+fov = 90.0
+size = 7.99
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="UI/Root_UI/3D_Viewport/SubViewport/camera_marker"]
+remote_path = NodePath("../../../../../../3D/Camera_limits/Marker_pivot")
+update_rotation = false
+update_scale = false
+
+[node name="Input_handler" type="Control" parent="UI/Root_UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yfb0g")
+
+[node name="Debug_tools" type="Node" parent="."]
+script = ExtResource("3_fpyou")

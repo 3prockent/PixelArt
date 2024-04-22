@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c572tairpm51w"]
+
+[ext_resource type="Texture2D" uid="uid://bx15fc2ldwbwe" path="res://src/main/resources/assets/3d/textures/asphalt_texture.png" id="1_4c8n1"]
+[ext_resource type="Texture2D" uid="uid://bee3grvank4wj" path="res://src/main/resources/assets/3d/textures/asphalt_normal.png" id="1_giyd8"]
+
+[resource]
+albedo_texture = ExtResource("1_4c8n1")
+normal_texture = ExtResource("1_giyd8")
+uv1_triplanar = true

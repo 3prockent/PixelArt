@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5rgvupwncqla"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/VerticalScroll.gd" id="1_bde5i"]
+[ext_resource type="PackedScene" uid="uid://drcdwg80qo2lp" path="res://src/main/Scenes/Top_black_indent.tscn" id="1_d4xwf"]
+[ext_resource type="Script" path="res://src/main/Scripts/generate_dynamic_themes.gd" id="2_5t6tk"]
+
+[node name="Art_picker_scene" type="Node"]
+
+[node name="Black_Indent_" parent="." instance=ExtResource("1_d4xwf")]
+
+[node name="BackGround" type="ColorRect" parent="Black_Indent_/Scene_put_here" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.937255, 0.937255, 0.937255, 1)
+
+[node name="VerticalScroll" type="ScrollContainer" parent="Black_Indent_/Scene_put_here/BackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("1_bde5i")
+
+[node name="Global_MarginsFromScreenEdges" type="MarginContainer" parent="Black_Indent_/Scene_put_here/BackGround/VerticalScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="Vertical_ConteinerForScroll" type="VBoxContainer" parent="Black_Indent_/Scene_put_here/BackGround/VerticalScroll/Global_MarginsFromScreenEdges"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_5t6tk")
+
+[editable path="Black_Indent_"]

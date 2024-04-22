@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2kpy47u1diwh"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/error_for_player.gd" id="1_c7t1s"]
+[ext_resource type="FontFile" uid="uid://inqgifithlsy" path="res://src/main/resources/assets/Fonts/SupplyCenter-0W9nz.ttf" id="1_oc3wm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_48s7c"]
+font = ExtResource("1_oc3wm")
+font_size = 80
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Error_for_player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c7t1s")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 460.0
+offset_right = 1045.0
+offset_bottom = 1460.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.05
+text = "asdasdsa"
+label_settings = SubResource("LabelSettings_48s7c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

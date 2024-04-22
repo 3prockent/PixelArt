@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://nrrwp6h7cahk"
+path="res://.godot/imported/square_bitmap.png-3992bebd9e1561bf1e226003f517277b.res"
+
+[deps]
+
+source_file="res://src/main/resources/assets/buttons/square_bitmap.png"
+dest_files=["res://.godot/imported/square_bitmap.png-3992bebd9e1561bf1e226003f517277b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

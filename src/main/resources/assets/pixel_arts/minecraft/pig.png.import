@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bx0wrlryyg2e8"
+path="res://.godot/imported/pig.png-eb097efe80eadab50d8e3b19928fd4f4.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/pig.png"
+dest_files=["res://.godot/imported/pig.png-eb097efe80eadab50d8e3b19928fd4f4.image"]
+
+[params]
+

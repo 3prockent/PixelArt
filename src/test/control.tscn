@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://3yyka6tvb7gs"]
+
+[ext_resource type="Texture2D" uid="uid://cy5qwbkuh5j06" path="res://src/main/resources/assets/3d/textures/brick_texture.png" id="1_8g7gf"]
+
+[sub_resource type="Shader" id="Shader_wt4v6"]
+code = "shader_type canvas_item;
+
+uniform sampler2D brick_tex : filter_nearest, source_color;
+
+varying vec2 pixel_pos ;
+
+void vertex() {
+	pixel_pos = VERTEX; 
+	
+}
+
+void fragment() {
+	if (SCREEN_PIXEL_SIZE.y > 1.0){
+		COLOR = texture(brick_tex, UV);
+	}
+	// Called for every pixel the material is visible on.
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scci5"]
+shader = SubResource("Shader_wt4v6")
+shader_parameter/brick_tex = ExtResource("1_8g7gf")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_scci5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

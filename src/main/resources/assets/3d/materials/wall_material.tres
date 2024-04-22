@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://boaumw2ls38xq"]
+
+[ext_resource type="Texture2D" uid="uid://cy5qwbkuh5j06" path="res://src/main/resources/assets/3d/textures/brick_texture.png" id="1_hhx5y"]
+
+[resource]
+albedo_texture = ExtResource("1_hhx5y")
+uv1_offset = Vector3(0, 0.068, 0)
+uv1_triplanar = true
+texture_filter = 0

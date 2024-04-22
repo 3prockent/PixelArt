@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ewmo037c0yf"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/coins_container.gd" id="1_g53g0"]
+[ext_resource type="Texture2D" uid="uid://df33ffvbsmojk" path="res://src/main/resources/assets/frames/image_frame.png" id="2_wo6b2"]
+[ext_resource type="Texture2D" uid="uid://nn8518smsdcg" path="res://src/main/resources/assets/menu_pictures/plus_icon.png" id="3_v31rh"]
+[ext_resource type="Texture2D" uid="uid://djcbppif021qq" path="res://src/main/resources/assets/menu_pictures/Coin2.png" id="4_ney7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dagd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8cxq"]
+
+[node name="Coins_Container" type="PanelContainer"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(250, 100)
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dagd1")
+script = ExtResource("1_g53g0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="Coins_Panel" type="PanelContainer" parent="HBoxContainer"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v8cxq")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Coins_Panel"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_right = 50
+
+[node name="Coins_Background" type="NinePatchRect" parent="HBoxContainer/Coins_Panel/MarginContainer"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+texture = ExtResource("2_wo6b2")
+region_rect = Rect2(0, 0, 12, 12)
+patch_margin_left = 6
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Coins_Panel/MarginContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 55
+
+[node name="Coins_Label" type="Label" parent="HBoxContainer/Coins_Panel/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Plus_button" type="TextureButton" parent="HBoxContainer/Coins_Panel"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(62, 62)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("3_v31rh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Button_Coin" type="TextureButton" parent="."]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.29
+texture_normal = ExtResource("4_ney7o")
+ignore_texture_size = true
+stretch_mode = 5

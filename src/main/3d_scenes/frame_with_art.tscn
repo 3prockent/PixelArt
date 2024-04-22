@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://del18jpbtdiqm"]
+
+[ext_resource type="PackedScene" uid="uid://b6u1jfymigeuv" path="res://src/main/resources/assets/3d/models/picture_frame.glb" id="1_5xqsc"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/frame_with_art.gd" id="1_mdhij"]
+[ext_resource type="Material" uid="uid://csk45gvoka66t" path="res://src/main/resources/assets/3d/materials/frame_material.tres" id="3_lfjy5"]
+[ext_resource type="Material" uid="uid://c6dxyocb8h75o" path="res://src/main/resources/assets/3d/materials/art_material.tres" id="4_dolns"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3r1wj"]
+size = Vector3(0.205505, 1.75824, 1.75412)
+
+[node name="frame_with_art" type="Node3D"]
+script = ExtResource("1_mdhij")
+
+[node name="picture_frame" parent="." instance=ExtResource("1_5xqsc")]
+
+[node name="frame" parent="picture_frame" index="0"]
+surface_material_override/0 = ExtResource("3_lfjy5")
+
+[node name="art" parent="picture_frame" index="1"]
+surface_material_override/0 = ExtResource("4_dolns")
+
+[node name="area_for_click" type="Area3D" parent="."]
+
+[node name="collision_for_click" type="CollisionShape3D" parent="area_for_click"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0237732, 0.869781, -0.0045929)
+shape = SubResource("BoxShape3D_3r1wj")
+
+[editable path="picture_frame"]

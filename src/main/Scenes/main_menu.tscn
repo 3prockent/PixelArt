@@ -1,0 +1,180 @@
+[gd_scene load_steps=15 format=3 uid="uid://bm3p6iat1o35"]
+
+[ext_resource type="PackedScene" uid="uid://ca6f01chk3osd" path="res://src/main/3d_scenes/street_with_wall.tscn" id="1_n1rl1"]
+[ext_resource type="Script" path="res://src/main/Scripts/Characters.gd" id="2_dghyj"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/3d_menu_camera.gd" id="2_pv1v5"]
+[ext_resource type="Script" path="res://src/main/Scripts/debug_tools.gd" id="3_fpyou"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/kill_character_zone.gd" id="3_r5omv"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/Input_handler_3d.gd" id="3_yfb0g"]
+[ext_resource type="PackedScene" uid="uid://bihhwlhrkqfxd" path="res://src/main/Scenes/indent_for_ui_hud.tscn" id="6_e8khi"]
+[ext_resource type="PackedScene" uid="uid://bbxaj30ostagt" path="res://src/main/Scenes/play_button.tscn" id="6_rb51m"]
+[ext_resource type="Script" path="res://src/main/Scripts/main_menu_ui.gd" id="7_f3bjm"]
+[ext_resource type="PackedScene" uid="uid://bs6772eus8xx3" path="res://src/main/Scenes/coins_panel.tscn" id="7_sp6mi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjqsq"]
+size = Vector3(15.2245, 8.7661, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3vrah"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mkrvu"]
+sky_material = SubResource("ProceduralSkyMaterial_3vrah")
+
+[sub_resource type="Environment" id="Environment_4emms"]
+background_mode = 2
+sky = SubResource("Sky_mkrvu")
+tonemap_mode = 2
+
+[node name="Main_Menu" type="Node"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="3D" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="3D"]
+
+[node name="street_with_wall" parent="3D/Objects" instance=ExtResource("1_n1rl1")]
+
+[node name="Characters" type="Node" parent="3D"]
+script = ExtResource("2_dghyj")
+
+[node name="Character_Instances" type="Node" parent="3D/Characters"]
+unique_name_in_owner = true
+
+[node name="Markers_to_spawn" type="Node" parent="3D/Characters"]
+unique_name_in_owner = true
+
+[node name="1" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.083, 0, -40.8211)
+
+[node name="2" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.096, 0, -40.8211)
+
+[node name="3" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.369, 0, -40.8211)
+
+[node name="4" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.643, 0, -40.8211)
+
+[node name="5" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.821, 0, -40.8211)
+
+[node name="6" type="Marker3D" parent="3D/Characters/Markers_to_spawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.936, 0, -40.8211)
+
+[node name="Timer_to_spawn_characters" type="Timer" parent="3D/Characters"]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
+
+[node name="kill_character_zone" type="Area3D" parent="3D/Characters"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3_r5omv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D/Characters/kill_character_zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30069, 1.74811, -43.8743)
+shape = SubResource("BoxShape3D_sjqsq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="3D/Characters/kill_character_zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30069, 1.74811, 43.7106)
+shape = SubResource("BoxShape3D_sjqsq")
+
+[node name="Timer_to_pop_up_bubble" type="Timer" parent="3D/Characters"]
+unique_name_in_owner = true
+wait_time = 5.0
+autostart = true
+
+[node name="Light" type="Node" parent="3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D/Light"]
+environment = SubResource("Environment_4emms")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3D/Light"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="Limits" type="Node" parent="3D"]
+
+[node name="left_limit_marker" type="Marker3D" parent="3D/Limits"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 40)
+gizmo_extents = 3.0
+
+[node name="right_limit_marker" type="Marker3D" parent="3D/Limits"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -40)
+gizmo_extents = 3.0
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Root_UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="3D_Viewport" type="SubViewportContainer" parent="UI/Root_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/Root_UI/3D_Viewport"]
+handle_input_locally = false
+size = Vector2i(1080, 1920)
+render_target_update_mode = 4
+
+[node name="camera_marker" type="Marker3D" parent="UI/Root_UI/3D_Viewport/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 2.18557e-08, -3.78552e-08, 0, 0, 0)
+script = ExtResource("2_pv1v5")
+
+[node name="Main_3d_camera" type="Camera3D" parent="UI/Root_UI/3D_Viewport/SubViewport/camera_marker"]
+unique_name_in_owner = true
+transform = Transform3D(1, 1.77636e-15, -4.26326e-14, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0)
+fov = 90.0
+size = 7.99
+
+[node name="Input_handler" type="Control" parent="UI/Root_UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yfb0g")
+
+[node name="HUD" parent="UI/Root_UI/Input_handler" instance=ExtResource("6_e8khi")]
+unique_name_in_owner = true
+layout_mode = 1
+script = ExtResource("7_f3bjm")
+
+[node name="Play_button" parent="UI/Root_UI/Input_handler/HUD/Indents_for_ui_vert/Indents_for_ui_horiz/UI_Elements" index="0" instance=ExtResource("6_rb51m")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -256.0
+offset_top = -257.0
+
+[node name="Coins_panel" parent="UI/Root_UI/Input_handler/HUD/Indents_for_ui_vert/Indents_for_ui_horiz/UI_Elements" index="1" instance=ExtResource("7_sp6mi")]
+
+[node name="Timer_to_tap" type="Timer" parent="UI/Root_UI"]
+unique_name_in_owner = true
+wait_time = 0.3
+one_shot = true
+
+[node name="Debug_tools" type="Node" parent="."]
+script = ExtResource("3_fpyou")
+Device = "Smartphone"
+System = "Android"
+Model = "Pixel 7 Pro"
+ratio = 3.08
+
+[editable path="UI/Root_UI/Input_handler/HUD"]

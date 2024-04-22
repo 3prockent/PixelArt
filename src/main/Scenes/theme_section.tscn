@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmpt7ad2t7ao7"]
+
+[ext_resource type="FontFile" uid="uid://dpcauvr6hquq1" path="res://src/main/resources/assets/Fonts/minecraft-ten-font-cyrillic.ttf" id="1_ystvy"]
+[ext_resource type="Script" path="res://src/main/Scripts/horizontal_scroll_for_group_of_arts.gd" id="2_qrsm0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpuo5"]
+font = ExtResource("1_ystvy")
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+
+[node name="Theme_Section" type="VBoxContainer"]
+script = ExtResource("2_qrsm0")
+
+[node name="Name_Of_GroupOfArts" type="Label" parent="."]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_gpuo5")
+
+[node name="HorizontalScroll_in_group" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 725)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+scroll_deadzone = 220
+
+[node name="Horizontal_colons_in_group" type="VBoxContainer" parent="HorizontalScroll_in_group"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="1_Container_for_vertically_arranging_arts_in_group" type="HBoxContainer" parent="HorizontalScroll_in_group/Horizontal_colons_in_group"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="2_Container_for_vertically_arranging_arts_in_group" type="HBoxContainer" parent="HorizontalScroll_in_group/Horizontal_colons_in_group"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30

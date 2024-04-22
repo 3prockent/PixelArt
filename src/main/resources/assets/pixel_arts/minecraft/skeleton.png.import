@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b1aolsxsojemk"
+path="res://.godot/imported/skeleton.png-77321a6966252f376e4dfc481c944905.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/skeleton.png"
+dest_files=["res://.godot/imported/skeleton.png-77321a6966252f376e4dfc481c944905.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://4jhn1fre1h4y"
+path="res://.godot/imported/one.png-938c13b7cbe32b81f39c7d53a7b1dd34.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/one.png"
+dest_files=["res://.godot/imported/one.png-938c13b7cbe32b81f39c7d53a7b1dd34.image"]
+
+[params]
+

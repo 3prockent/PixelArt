@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bkykn1i1wj2pk"
+path="res://.godot/imported/creeper.png-92666c59dc6f20caf9ce0043d4b1af71.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/creeper.png"
+dest_files=["res://.godot/imported/creeper.png-92666c59dc6f20caf9ce0043d4b1af71.image"]
+
+[params]
+

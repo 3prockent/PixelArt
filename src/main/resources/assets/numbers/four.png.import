@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dasg1cceggipm"
+path="res://.godot/imported/four.png-8e95271980cbe8dc4cd347884fc954eb.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/four.png"
+dest_files=["res://.godot/imported/four.png-8e95271980cbe8dc4cd347884fc954eb.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://ds7hgu42nj4ch"
+path="res://.godot/imported/zombie.png-26cb8b3b8a7b1be910b99300c3902072.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/zombie.png"
+dest_files=["res://.godot/imported/zombie.png-26cb8b3b8a7b1be910b99300c3902072.image"]
+
+[params]
+

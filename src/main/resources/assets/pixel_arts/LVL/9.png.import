@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://pp7mjolef4s6"
+path="res://.godot/imported/9.png-0e7b7b69fe564fb9d00bde7f4cb43061.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/LVL/9.png"
+dest_files=["res://.godot/imported/9.png-0e7b7b69fe564fb9d00bde7f4cb43061.image"]
+
+[params]
+

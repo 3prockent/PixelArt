@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://dbwf6defih46r"]
+
+[ext_resource type="Texture2D" uid="uid://bnwaxf1633s13" path="res://src/main/resources/assets/menu_pictures/library_black.png" id="1_e3qyy"]
+[ext_resource type="Script" path="res://src/main/Scripts/bottom_paner_for_change_scenes.gd" id="1_pvl2k"]
+[ext_resource type="Texture2D" uid="uid://bqn4wlwhdo0s7" path="res://src/main/resources/assets/frames/Bottom_panel.png" id="1_wnbk4"]
+[ext_resource type="PackedScene" uid="uid://d0ewmo037c0yf" path="res://src/main/Scenes/coins_container.tscn" id="2_ksa86"]
+[ext_resource type="Texture2D" uid="uid://cew557ok1q7yi" path="res://src/main/resources/assets/menu_pictures/discover.png" id="2_qlvlh"]
+[ext_resource type="Texture2D" uid="uid://2l06mvtqhfbh" path="res://src/main/resources/assets/menu_pictures/library.png" id="3_u2a7m"]
+[ext_resource type="Texture2D" uid="uid://kr0idj23dqjk" path="res://src/main/resources/assets/menu_pictures/create.png" id="4_65aon"]
+[ext_resource type="Texture2D" uid="uid://8bv4l7yqebk5" path="res://src/main/resources/assets/menu_pictures/my_works.png" id="4_b86wv"]
+[ext_resource type="Texture2D" uid="uid://13x7v4a1kts7" path="res://src/main/resources/assets/menu_pictures/discover_black.png" id="5_v4t24"]
+[ext_resource type="Texture2D" uid="uid://c0olwf27yuans" path="res://src/main/resources/assets/menu_pictures/play.png" id="5_x8gkx"]
+[ext_resource type="Texture2D" uid="uid://5hakb8rjcu2b" path="res://src/main/resources/assets/menu_pictures/create_black.png" id="6_6x86q"]
+[ext_resource type="Texture2D" uid="uid://ubshrcvwu36d" path="res://src/main/resources/assets/menu_pictures/my_works_black.png" id="8_q1nog"]
+
+[node name="Bottom_Paner_For_ChangeScenes" type="Node"]
+script = ExtResource("1_pvl2k")
+
+[node name="Vertical_Container" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Push_Panel_ToBottom" type="Control" parent="Vertical_Container"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TopPanel_HBox" type="HBoxContainer" parent="Vertical_Container/Push_Panel_ToBottom"]
+custom_minimum_size = Vector2(220, 100)
+layout_direction = 3
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 270.0
+offset_bottom = 250.0
+
+[node name="Coins_Container" parent="Vertical_Container/Push_Panel_ToBottom/TopPanel_HBox" instance=ExtResource("2_ksa86")]
+layout_mode = 2
+
+[node name="Play_Button" type="TextureButton" parent="Vertical_Container/Push_Panel_ToBottom"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -190.0
+offset_right = -60.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_x8gkx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Panel" type="NinePatchRect" parent="Vertical_Container"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+texture = ExtResource("1_wnbk4")
+region_rect = Rect2(0, 0, 6, 15)
+patch_margin_top = 14
+
+[node name="Separations_from_edges" type="MarginContainer" parent="Vertical_Container/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.17
+mouse_filter = 0
+theme_override_constants/margin_top = 14
+
+[node name="Horizontal_for_buttons" type="HBoxContainer" parent="Vertical_Container/Panel/Separations_from_edges"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureButton library" type="TextureButton" parent="Vertical_Container/Panel/Separations_from_edges/Horizontal_for_buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource("1_e3qyy")
+texture_pressed = ExtResource("3_u2a7m")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton discover" type="TextureButton" parent="Vertical_Container/Panel/Separations_from_edges/Horizontal_for_buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource("5_v4t24")
+texture_pressed = ExtResource("2_qlvlh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton create" type="TextureButton" parent="Vertical_Container/Panel/Separations_from_edges/Horizontal_for_buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource("6_6x86q")
+texture_pressed = ExtResource("4_65aon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton my_works" type="TextureButton" parent="Vertical_Container/Panel/Separations_from_edges/Horizontal_for_buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource("8_q1nog")
+texture_pressed = ExtResource("4_b86wv")
+ignore_texture_size = true
+stretch_mode = 5

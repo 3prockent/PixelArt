@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://no53gqd18xu1"
+path="res://.godot/imported/dragon.png-0664c5576d78a543a455a2149a008c42.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/dragon.png"
+dest_files=["res://.godot/imported/dragon.png-0664c5576d78a543a455a2149a008c42.image"]
+
+[params]
+

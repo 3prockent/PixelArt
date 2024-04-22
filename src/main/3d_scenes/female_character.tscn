@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dphpu70nqk02r"]
+
+[ext_resource type="PackedScene" uid="uid://daxfthrg1c24l" path="res://src/main/resources/assets/3d/models/female_base.glb" id="1_gc7nk"]
+[ext_resource type="Material" uid="uid://d4a8701w4835g" path="res://src/main/resources/assets/3d/materials/character_base_materisl.tres" id="2_3kkww"]
+[ext_resource type="Script" path="res://src/main/Scripts/3D/base_character.gd" id="2_fh8ne"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_romyw"]
+height = 2.1488
+
+[node name="Female_character" node_paths=PackedStringArray("character_mesh", "bone_for_hair", "anim_player") instance=ExtResource("1_gc7nk")]
+collision_layer = 4
+collision_mask = 20
+wall_min_slide_angle = 0.0
+floor_block_on_wall = false
+script = ExtResource("2_fh8ne")
+character_mesh = NodePath("Female/Skeleton3D/Base_001")
+bone_for_hair = NodePath("Female/Skeleton3D/bone_for_hair")
+gender = 1
+anim_player = NodePath("AnimationPlayer")
+
+[node name="Skeleton3D" parent="Female" index="0"]
+bones/0/position = Vector3(-4.38709, 0.137867, -116.017)
+bones/0/rotation = Quaternion(-0.724251, -0.0148759, -0.00062785, 0.689375)
+bones/1/rotation = Quaternion(-0.0267308, 0.0219792, 0.0163466, 0.999267)
+bones/2/rotation = Quaternion(0.00206043, 0.0148203, 0.00934823, 0.999844)
+bones/3/rotation = Quaternion(0.00213038, 0.015059, 0.00921552, 0.999842)
+bones/4/rotation = Quaternion(0.0149731, -0.00428795, -0.00998333, 0.999829)
+bones/5/rotation = Quaternion(-0.10196, -0.0230257, -0.0335637, 0.993956)
+bones/7/rotation = Quaternion(-0.650558, -0.361419, 0.526283, -0.411311)
+bones/8/position = Vector3(1.3391e-06, 14.2315, 3.3244e-06)
+bones/8/rotation = Quaternion(0.430049, 0.188294, 0.0507635, 0.881491)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(-8.03502e-07, 29.1608, 8.42232e-07)
+bones/9/rotation = Quaternion(-0.0057916, 0.00252766, 0.0873449, 0.996158)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/position = Vector3(7.15258e-07, 34.2522, 9.78633e-06)
+bones/11/rotation = Quaternion(0.58756, -0.396369, 0.596647, 0.3764)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.341316, -0.344503, -0.107818, 0.867869)
+bones/13/position = Vector3(-4.29031e-06, 29.1585, -1.02729e-05)
+bones/13/rotation = Quaternion(-0.0200278, -0.00233029, -0.281636, 0.95931)
+bones/14/rotation = Quaternion(-9.77889e-08, 1.57393e-07, 5.21541e-08, 1)
+bones/15/rotation = Quaternion(-0.0147578, 0.227937, 0.972942, -0.0347927)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(-0.44646, -0.0885768, -0.0427362, 0.889383)
+bones/17/rotation = Quaternion(0.452931, 0.0212637, 0.0579941, 0.889403)
+bones/18/rotation = Quaternion(0.471799, 0.0316673, -0.0191908, 0.880928)
+bones/19/rotation = Quaternion(-4.88944e-09, -1.57364e-07, 9.70031e-08, 1)
+bones/20/rotation = Quaternion(-0.0199504, 0.0920024, 0.994767, -0.0397038)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.272673, -0.000932361, 0.0304473, 0.961625)
+bones/22/rotation = Quaternion(0.56803, -0.0680573, -0.0981754, 0.814292)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(0.323201, -0.0551882, 0.0205961, 0.944495)
+bones/23/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Base_001" parent="Female/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_3kkww")
+
+[node name="bone_for_hair" type="BoneAttachment3D" parent="Female/Skeleton3D" index="1"]
+transform = Transform3D(0.999004, 0.0315358, 0.0315702, -0.0219762, -0.268038, 0.963158, 0.038836, -0.962892, -0.267078, -4.50825, -5.47009, -218.184)
+bone_name = "mixamorig_HeadTop_End"
+bone_idx = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245838, 1.08133, 0)
+shape = SubResource("CapsuleShape3D_romyw")

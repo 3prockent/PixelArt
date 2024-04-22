@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://sbuhokc68oox"
+path="res://.godot/imported/Bit_Map.png-068c86ade2a9bc7ebfe720d0986f89a6.res"
+
+[deps]
+
+source_file="res://src/main/resources/assets/Color_Picker/Bit_Map.png"
+dest_files=["res://.godot/imported/Bit_Map.png-068c86ade2a9bc7ebfe720d0986f89a6.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

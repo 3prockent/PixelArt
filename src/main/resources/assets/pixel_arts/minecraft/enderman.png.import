@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c3x0s6dpepdci"
+path="res://.godot/imported/enderman.png-8e6c037fa365d06f88135ba40a196c61.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/enderman.png"
+dest_files=["res://.godot/imported/enderman.png-8e6c037fa365d06f88135ba40a196c61.image"]
+
+[params]
+

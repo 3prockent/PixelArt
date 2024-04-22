@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b4tt07tpdbpkm"
+path="res://.godot/imported/six.png-c31a5d3d95d0ec9304790f296a5a8e2d.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/six.png"
+dest_files=["res://.godot/imported/six.png-c31a5d3d95d0ec9304790f296a5a8e2d.image"]
+
+[params]
+

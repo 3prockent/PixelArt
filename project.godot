@@ -1,0 +1,82 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Pixelart"
+run/main_scene="res://src/main/Scenes/Profiler/choose_profile.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+run/max_fps=120
+config/icon="res://src/main/resources/assets/icon.png"
+
+[autoload]
+
+Constants="*res://src/main/Scripts/Globals/constant_paths.gd"
+Configurator="*res://src/main/Scripts/Globals/configurator.gd"
+ArtStorage="*res://src/main/Scripts/Globals/art_storage.gd"
+BalanceManager="*res://src/main/Scripts/Globals/balance_manager.gd"
+GodotPlayGameServices="*res://addons/GodotPlayGameServices/autoloads/godot_play_game_services.gd"
+SignInClient="*res://addons/GodotPlayGameServices/autoloads/sign_in_client.gd"
+AchievementsClient="*res://addons/GodotPlayGameServices/autoloads/achievements_client.gd"
+LeaderboardsClient="*res://addons/GodotPlayGameServices/autoloads/leaderboards_client.gd"
+PlayersClient="*res://addons/GodotPlayGameServices/autoloads/players_client.gd"
+SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.gd"
+SaveManager="*res://src/main/Scripts/Globals/save_manager.gd"
+SyncManager="*res://src/main/Scripts/Globals/sync_manager.gd"
+General="*res://src/main/Scripts/Globals/general.gd"
+SceneManager="*res://src/main/Scripts/Globals/scene_manager.gd"
+EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/always_on_top=true
+window/size/window_width_override=360
+window/size/window_height_override=640
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+window/vsync/vsync_mode=0
+
+[editor]
+
+movie_writer/movie_file="C:/IGRA/123.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg")
+
+[importer_defaults]
+
+image={}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+3d_physics/layer_1="for_finger_pan_zoom_"
+3d_physics/layer_2="3d_camera_limits"
+3d_physics/layer_3="Characters"
+3d_physics/layer_4="kill_characters"
+3d_physics/layer_5="characters_limits"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

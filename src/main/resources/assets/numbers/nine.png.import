@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dm6vtt1l8symf"
+path="res://.godot/imported/nine.png-9d2d79e2bba183775d6d45b124c68e49.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/nine.png"
+dest_files=["res://.godot/imported/nine.png-9d2d79e2bba183775d6d45b124c68e49.image"]
+
+[params]
+

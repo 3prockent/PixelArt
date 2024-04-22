@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://baxsohnr3jeha"
+path="res://.godot/imported/3.png-dd2ac5a5d52c6c0a105366b9e0b2615f.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/LVL/3.png"
+dest_files=["res://.godot/imported/3.png-dd2ac5a5d52c6c0a105366b9e0b2615f.image"]
+
+[params]
+

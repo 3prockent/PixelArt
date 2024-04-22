@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://d4ce4ruta5txf"
+path="res://.godot/imported/seven.png-6f5bf97578c96c69413ce380b024080d.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/seven.png"
+dest_files=["res://.godot/imported/seven.png-6f5bf97578c96c69413ce380b024080d.image"]
+
+[params]
+

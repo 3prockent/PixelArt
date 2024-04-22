@@ -1,0 +1,187 @@
+[gd_scene load_steps=11 format=3 uid="uid://bd5lx4t4yel3n"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/Profiler/choose_profile.gd" id="1_qwka7"]
+[ext_resource type="Theme" uid="uid://bohu41nnomr1h" path="res://src/main/resources/assets/themes/choose_profile.tres" id="2_3ydm6"]
+[ext_resource type="Texture2D" uid="uid://dg2ggikegi2lx" path="res://src/main/resources/assets/buttons/user_icon.png" id="3_pwy4l"]
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="4_jlnfw"]
+[ext_resource type="Script" path="res://src/main/Scripts/debug_tools.gd" id="4_pycb1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vigqm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fffwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgt8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aw74i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io8kg"]
+
+[node name="ChooseProfile" type="Node"]
+script = ExtResource("1_qwka7")
+
+[node name="Full_screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Full_screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.239216, 0.203922, 1)
+
+[node name="separator_to_top_and_bot" type="VBoxContainer" parent="Full_screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top_screen_half" type="Control" parent="Full_screen/separator_to_top_and_bot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Bot_screen_half" type="Control" parent="Full_screen/separator_to_top_and_bot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="separator_to_top_centr_bot" type="VBoxContainer" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="top" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="centr" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Control" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShowCurrentProfileButton" type="Button" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vigqm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fffwp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hgt8p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aw74i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_io8kg")
+clip_text = true
+script = ExtResource("4_jlnfw")
+power_of_scale = 0.95
+
+[node name="PanelContainer" type="PanelContainer" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control/ShowCurrentProfileButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("2_3ydm6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control/ShowCurrentProfileButton/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="user_name" type="Label" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control/ShowCurrentProfileButton/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.4
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Control" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control/ShowCurrentProfileButton/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer/Control/ShowCurrentProfileButton/PanelContainer/HBoxContainer/Control"]
+layout_mode = 2
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -63.5
+offset_bottom = 63.5
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.32
+mouse_filter = 2
+texture = ExtResource("3_pwy4l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ActionButton" type="Button" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer/Control2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_3ydm6")
+text = "New Game"
+script = ExtResource("4_jlnfw")
+power_of_scale = 0.95
+
+[node name="Control3" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot/centr/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bot" type="Control" parent="Full_screen/separator_to_top_and_bot/Bot_screen_half/separator_to_top_centr_bot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Debug_tools" type="Node" parent="."]
+script = ExtResource("4_pycb1")
+Set_remove_progress = true

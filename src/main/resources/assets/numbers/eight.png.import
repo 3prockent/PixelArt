@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b5ikdfyhmd66p"
+path="res://.godot/imported/eight.png-d736442e73c9193c5709d5dd90b020d0.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/numbers/eight.png"
+dest_files=["res://.godot/imported/eight.png-d736442e73c9193c5709d5dd90b020d0.image"]
+
+[params]
+

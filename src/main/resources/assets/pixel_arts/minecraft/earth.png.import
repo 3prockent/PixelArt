@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://mbbymamtutqx"
+path="res://.godot/imported/earth.png-64d96dcfd28a0664e599e9c6c26f581c.image"
+
+[deps]
+
+source_file="res://src/main/resources/assets/pixel_arts/minecraft/earth.png"
+dest_files=["res://.godot/imported/earth.png-64d96dcfd28a0664e599e9c6c26f581c.image"]
+
+[params]
+

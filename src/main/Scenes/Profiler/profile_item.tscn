@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://kl3w553tpg0j"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/profile_item.gd" id="1_e2d08"]
+[ext_resource type="Texture2D" uid="uid://de4orf4m4uiuo" path="res://src/main/resources/assets/buttons/edit_icon.png" id="2_x4eyj"]
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="3_ea7am"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8sk3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44804"]
+bg_color = Color(0.427451, 0.266667, 0.145098, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.215686, 0.121569, 0.054902, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vu2l"]
+bg_color = Color(0.933333, 0.898039, 0.768627, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.364706, 0.321569, 0.164706, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="ProfileItem" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 164)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_e2d08")
+
+[node name="Tougle_choose_player_button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8sk3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_44804")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_44804")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vu2l")
+toggle_mode = true
+script = ExtResource("3_ea7am")
+power_of_scale = 0.95
+
+[node name="MarginContainer" type="MarginContainer" parent="Tougle_choose_player_button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tougle_choose_player_button/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProfileDisplayNameLabel" type="Label" parent="Tougle_choose_player_button/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 5.68
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 70
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Control" type="Control" parent="Tougle_choose_player_button/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 164)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="EditButton" type="TextureButton" parent="Tougle_choose_player_button/MarginContainer/HBoxContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 164)
+layout_mode = 2
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -82.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_x4eyj")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_ea7am")

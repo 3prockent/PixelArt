@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkj0gdwy8voc8"]
+
+[ext_resource type="Script" path="res://src/main/Scripts/3D/Character_speech_bubble.gd" id="1_8fuum"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xjlfe"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Character_speech_bubble" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.883, 0.65)
+top_level = true
+billboard = 2
+texture = SubResource("ViewportTexture_xjlfe")
+script = ExtResource("1_8fuum")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="Booble_texture" type="Sprite2D" parent="SubViewport"]
+unique_name_in_owner = true
+centered = false
+
+[node name="emoji_texture" type="Sprite2D" parent="SubViewport"]
+unique_name_in_owner = true
+position = Vector2(128, 120)
+scale = Vector2(0.5, 0.5)

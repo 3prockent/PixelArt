@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drcdwg80qo2lp"]
+
+[node name="Black_Indent_" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = -1
+
+[node name="Black" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.06
+color = Color(0, 0, 0, 1)
+
+[node name="Scene_put_here" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bihhwlhrkqfxd"]
+
+[node name="Indent_for_ui_hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Indents_for_ui_vert" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="top_indent" type="Control" parent="Indents_for_ui_vert"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+mouse_filter = 2
+
+[node name="Indents_for_ui_horiz" type="HBoxContainer" parent="Indents_for_ui_vert"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="left_indent" type="Control" parent="Indents_for_ui_vert/Indents_for_ui_horiz"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.03
+mouse_filter = 2
+
+[node name="UI_Elements" type="Control" parent="Indents_for_ui_vert/Indents_for_ui_horiz"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="right_indent" type="Control" parent="Indents_for_ui_vert/Indents_for_ui_horiz"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.03
+mouse_filter = 2
+
+[node name="bot_indent" type="Control" parent="Indents_for_ui_vert"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.06
+mouse_filter = 2

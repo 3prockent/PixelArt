@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs6772eus8xx3"]
+
+[ext_resource type="Script" path="res://src/main/Scenes/scaled_button.gd" id="1_aci55"]
+[ext_resource type="Texture2D" uid="uid://cxnorxrh33nsq" path="res://src/main/resources/assets/buttons/coin.png" id="2_8ifra"]
+[ext_resource type="FontFile" uid="uid://inqgifithlsy" path="res://src/main/resources/assets/Fonts/SupplyCenter-0W9nz.ttf" id="3_7lmu1"]
+[ext_resource type="Texture2D" uid="uid://ckgp8gh4ns3d1" path="res://src/main/resources/assets/buttons/green_plus.png" id="3_7stvg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hdvv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.419813, 0.419813, 0.419813, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6mf5"]
+font = ExtResource("3_7lmu1")
+font_size = 33
+font_color = Color(0, 0, 0, 1)
+
+[node name="Coins_panel" type="Control"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_aci55")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.01
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hdvv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.51
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer/Control"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.565, 1.565)
+pivot_offset = Vector2(30, 30)
+mouse_filter = 2
+texture = ExtResource("2_8ifra")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "999999"
+label_settings = SubResource("LabelSettings_b6mf5")
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_7stvg")
+expand_mode = 1
+stretch_mode = 4
